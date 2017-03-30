@@ -1,0 +1,18 @@
+{
+  "name": "socket-example",
+  "version": "0.0.1",
+  "description": "CA",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "socket.io"
+  ],
+  "author": "Genesis Sardinia",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.15.0",
+    "socket.io": "^1.7.3"
+  }
+}

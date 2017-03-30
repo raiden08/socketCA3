@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Socket.io</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<script type="text/javascript" src='/socket.io/socket.io.js'></script>
+
+<script type="text/javascript">
+
+	var socket = io.connect();
+	var user;
+	var message;
+
+
+	function sendMsg() 
+	{
+		message = document.getElementById("txtmsg").value;
+	
+		socket.emit('sendMsg', message);
+		document.getElementById("txtmsg").value = "";
+	}
+
+
+	socket.on('msgSent', function (sendingUser, msg) 
+	{
+		var prevMsg = document.getElementById("messages1").innerHTML;
+
+		document.getElementById("messages1").innerHTML = prevMsg + "<br>" + "<strong>"+sendingUser + "</strong>" + ": "+ msg;
+		
+	})
+
+	function sendUser()
+	{
+		var username = document.getElementById("username").value;
+
+		socket.emit('newUser', username);
+
+		usernameBar.style.display= "none";
+		sendBar.style.display= "block";
+	}
+
+	socket.on('user', function(data)
+	{
+		user = data;
+	})
+
+
+</script>
+
+<body>
+	<div class="chatApp">
+		<h1>Socket.IO Chat App CA3</h1>
+		
+		<div class="messages" id="messages">
+			<p class="messages1" id="messages1"></p>
+		</div>
+		
+		<div class="usernameBar" id="usernameBar">
+			<input type="text" placeholder="Enter Username" name="username" id="username">
+			<button onclick="sendUser()" class="sbmitBtn">Submit</button>
+		</div>
+		
+		
+
+		<div class="sendBar" id="sendBar">
+			<input type="text" placeholder="Enter Message" name="message" id="txtmsg" class="txtmsg">
+			<button onclick="sendMsg()" class="sndMsg">Send</button>
+		</div>
+
+	</div>
+
+</body>
+
+</html>

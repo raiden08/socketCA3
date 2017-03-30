@@ -1,0 +1,61 @@
+h1
+{
+	color: black;
+	text-align: center;
+}
+
+body
+{
+	background-color: #e1dece;
+}
+
+.chatApp
+{
+	margin: 50px 600px 0px 600px;
+	border: 5px solid #778899;
+	height: 720px;
+}
+
+.messages
+{
+	border: 5px solid black;
+	height: 500px;
+	width: 500px;
+	margin: auto;
+}
+
+#txtmsg, #username
+{
+	height: 25px;
+	width: 450px;
+}
+
+.sndMsg, .sbmitBtn
+{
+	height: 35px;
+	background-color: #f5f5dc;
+	border-radius: 5px
+}
+
+.messages1
+{
+	margin-left: 5px;
+}
+
+.usernameBar
+{
+	padding-top: 75px;
+	margin: 10px;
+	text-align: center;
+}
+
+.sendBar
+{
+	padding-top: 75px;
+	margin: 10px;
+	display: none;
+	
+	text-align: center;
+	
+
+}
